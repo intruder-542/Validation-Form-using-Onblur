@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title></title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+
+<!-- jQuery library -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+<!-- Popper JS -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+
+<!-- Latest compiled JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+</head>
+<body>
+<h1 class="text-white text-center font-weight-bold bg-success" style="font-size: 55px;"> Complete Form Validation </h1>
+
+  <div class="container"><br>
+    
+    <div class="col-lg-6 m-auto d-block">
+      
+     <form action="#" onkeyup="return validation()" class="bg-light">
+        
+        <div class="form-group">
+          <label for="user" class="font-weight-bold"> Username: </label>
+          <input type="text" name="user" class="form-control" id="user" autocomplete="off" onblur="client()">
+          <span id="username" class="text-danger font-weight-bold"> </span>
+        </div>
+
+        <div class="form-group">
+          <label class="font-weight-bold"> Password: </label>
+          <input type="text" name="pass" class="form-control" id="pass" autocomplete="off" onblur="pswd()">
+          <span id="passwords" class="text-danger font-weight-bold"> </span>
+        </div>
+
+        <div class="form-group">
+          <label class="font-weight-bold"> Confirm Password: </label>
+          <input type="text" name="conpass" class="form-control" id="conpass" autocomplete="off" onblur="pswd()">
+          <span id="confrmpass" class="text-danger font-weight-bold"> </span>
+        </div>
+
+        <div class="form-group">
+          <label class="font-weight-bold"> Mobile Number: </label>
+          <input type="text" name="mobile" class="form-control" id="mobileNumber" autocomplete="off" onkeypress="mobile()">
+          <span id="mobileno" class="text-danger font-weight-bold"> </span>
+        </div>
+
+        <div class="form-group">
+          <label class="font-weight-bold"> Email: </label>
+          <input type="text" name="email" class="form-control" id="emails" autocomplete="off" onblur="emailcheck()">
+          <span id="emailids" class="text-danger font-weight-bold"> </span>
+        </div>
+        <div class="form-group">
+          <input type="radio" name="gender" id="radmale" value="Male" onblur="return checkGender();" /><label for="radmale">Male</label>
+<input type="radio" name="gender" id="radfemale" value="Female" onblur="return checkGender();" /><label for="radfemale">Female</label>
+<span id="errgender"></span>
+        </div>
+        <div class="form-group"> 
+        <label class="font-weight-bold">Date Of Birth:</label>
+<select name="date">
+<option name="01" value="01">01</option>
+<option name="02" value="02">02</option>
+<option name="03" value="03">04</option>
+<option name="05" value="05">05</option>
+<option name="06" value="06">06</option>
+<option name="07" value="07">07</option>
+<option name="08" value="08">08</option>
+<option name="09" value="09">09</option>
+<option name="10" value="10">10</option>
+<option name="11" value="11">11</option>
+<option name="12" value="12">12</option>
+<option name="13" value="13">13</option>
+<option name="14" value="14">14</option>
+<option name="15" value="15">15</option>
+<option name="16" value="16">16</option>
+<option name="17" value="17">17</option>
+<option name="18" value="18">18</option>
+<option name="19" value="19">19</option>
+<option name="20" value="20">20</option>
+<option name="21" value="21">21</option>
+<option name="22" value="22">22</option>
+<option name="23" value="23">23</option>
+<option name="24" value="24">24</option>
+<option name="25" value="25">25</option>
+<option name="26" value="26">26</option>
+<option name="27" value="27">27</option>
+<option name="28" value="28">28</option>
+<option name="29" value="29">29</option>
+<option name="30" value="30">30</option>
+<option name="31" value="31">31</option>
+</select>
+<select name="month">
+<option name="01" value="01">01</option>
+<option name="02" value="02">02</option>
+<option name="03" value="03">03</option>
+<option name="04" value="04">04</option>
+<option name="05" value="05">05</option>
+<option name="06" value="06">06</option>
+<option name="07" value="07">07</option>
+<option name="08" value="08">08</option>
+<option name="09" value="09">09</option>
+<option name="10" value="10">10</option>
+<option name="11" value="11">11</option>
+<option name="12" value="12">12</option>
+</select>
+<select name="year">
+<option name="1980" value="1980">1980</option>
+<option name="1981" value="1981">1981</option>
+<option name="1982" value="1982">1982</option>
+<option name="1983" value="1983">1983</option>
+<option name="1984" value="1984">1984</option>
+<option name="1985" value="1985">1985</option>
+<option name="1986" value="1986">1986</option>
+<option name="1987" value="1987">1987</option>
+<option name="1988" value="1988">1988</option>
+<option name="1989" value="1989">1989</option>
+<option name="1990" value="1990">1990</option>
+<option name="1991" value="1991">1991</option>
+<option name="1992" value="1992">1992</option>
+<option name="1993" value="1993">1993</option>
+<option name="1994" value="1994">1994</option>
+<option name="1995" value="1995">1995</option>
+<option name="1996" value="1996">1996</option>
+<option name="1997" value="1997">1997</option>
+<option name="1998" value="1998">1998</option>
+<option name="1999" value="1999">1999</option>
+<option name="2000" value="2000">2000</option>
+<option name="2001" value="2001">2001</option>
+</select>
+</div>
+<div class="form-group">
+<label class="font-weight-bold"> Techincal Skills:</label>
+<input type="checkbox" name="C-Programming" value="C-Programming"/><h7>C-Programming</h7>
+<input type="checkbox" name="C++" value="C++"/><h7>C++</h7>
+<input type="checkbox" name="Hindi" value="JAVA"/><h7>JAVA</h7>
+<input type="checkbox" name="Tamil" value="WEB DEVLOPMENT"/><h7>WEB DEVLOPMENT</h7>
+</div>
+<div class="form-group">
+<label class="font-weight-bold"> Languages Known:</label>
+<select name="Languages" size="4" multiple>
+<option value="English">English</option>
+    <option value="Telugu">Telugu</option>
+    <option value="Hindi">Hindi</option>
+    <option value="Others">Others</option>
+</select>
+</div>
+<div class="form-group">
+<label class="font-weight-bold"> City:</label>
+<textarea rows="1" cols="20">
+</textarea>   
+</div>
+
+        <input type="submit" name="submit" value="submit" class="btn btn-success"   autocomplete="off">
+
+
+      </form><br><br>
+
+
+    </div>
+  </div>
+
+
+
+  <script type="text/javascript">
+    
+    var errMessage = "";
+    function validation(){
+
+      client();
+      pswd();
+      mobile();
+      emailcheck();
+      checkGender();
+      if (errMessage == "") {
+    } else {
+        alert(errMessage);
+    }
+
+    }
+    function client(){
+
+      var user = document.getElementById('user').value;
+
+      if(user == ""){
+        document.getElementById('username').innerHTML =" ** Please fill the username field";
+        return false;
+      }
+      else if((user.length <= 2) || (user.length > 20)) {
+        document.getElementById('username').innerHTML =" ** Username lenght must be between 2 and 20";
+        return false; 
+      }
+      else if(!isNaN(user)){
+        document.getElementById('username').innerHTML =" ** only characters are allowed";
+        return false;
+      }
+      else if(isNaN(user)){
+        document.getElementById('username').innerHTML =" ** successful"
+           return false;
+      }
+      return true;
+    }
+    function pswd(){
+
+          var pass = document.getElementById('pass').value;
+          var confirmpass = document.getElementById('conpass').value;
+
+      if(pass == ""){
+        document.getElementById('passwords').innerHTML =" ** Please fill the password field";
+        return false;
+      }
+      else if((pass.length <= 5) || (pass.length > 20)) {
+        document.getElementById('passwords').innerHTML =" ** Passwords lenght must be between  5 and 20";
+        return false; 
+      }
+
+     else if(pass!=confirmpass){
+        document.getElementById('confrmpass').innerHTML =" ** Password does not match the confirm password";
+        return false;
+      }
+
+
+
+      else if(confirmpass == ""){
+        document.getElementById('confrmpass').innerHTML =" ** Please fill the confirmpassword field";
+        return false;
+      } 
+      else if(isNaN(pass) && isNaN(confirmpass))
+      {
+        document.getElementById('password').innerHTML =" ** strong";
+        document.getElementById('confrmpass').innerHTML =" ** ";
+        return false;
+      }
+      return true;
+    }
+    function mobile(){
+      var mobileNumber = document.getElementById('mobileNumber').value;
+
+      if(mobileNumber == ""){
+        document.getElementById('mobileno').innerHTML =" ** Please fill the mobile NUmber field";
+        return false;
+      }
+     else if(isNaN(mobileNumber)){
+        document.getElementById('mobileno').innerHTML =" ** user must write digits only not characters";
+        return false;
+      }
+      else if(mobileNumber.length!=10){
+        document.getElementById('mobileno').innerHTML =" ** Mobile Number must be 10 digits only";
+        return false;
+      }
+      else if(mobileNumber.length == 10){
+        document.getElementById('mobileno').innerHTML =" ** valid";
+        return false;
+      }
+     return true;
+
+    }
+    function emailcheck(){
+      var emails = document.getElementById('emails').value;
+      if(emails == ""){
+        document.getElementById('emailids').innerHTML =" ** Please fill the email idx` field";
+        return false;
+      }
+     else if(emails.indexOf('@') <= 0 ){
+        document.getElementById('emailids').innerHTML =" ** @ Invalid Position";
+        return false;
+      }
+      else if((emails.charAt(emails.length-4)!='.') && (emails.charAt(emails.length-3)!='.')){
+        document.getElementById('emailids').innerHTML =" ** . Invalid Position";
+        return false;
+      }
+      else if(isNaN(emails)){
+        document.getElementById('emailids').innerHTML =" ** valid";
+        return false;
+      }
+      return true;
+    }
+   function checkGender()
+{
+    var ctrid1="radmale", ctrid2="radfemale", errid="errgender";
+    var male = document.getElementById(ctrid1);
+    var female = document.getElementById(ctrid2);
+    if(male.checked == false && female.checked == false)
+    {
+        document.getElementById(errid).innerHTML = "** .select gender"
+        return false;
+    }
+    else
+    {
+        document.getElementById(errid).innerHTML = "";  
+         return true;
+    }
+  }
+  </script>
+
+</body>
+</html>
